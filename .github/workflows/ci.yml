@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v1
         with:
-          node-version: 14
+          node-version: 16
       - uses: actions/checkout@v2
       - run: yarn --frozen-lockfile
       - run: yarn type-check
@@ -36,7 +36,7 @@ jobs:
         run: sudo apt-get install --no-install-recommends -y libarchive-tools
       - uses: actions/setup-node@v1
         with:
-          node-version: 14
+          node-version: 16
       - uses: actions/checkout@v2
       - run: yarn --frozen-lockfile
       - run: yarn build
