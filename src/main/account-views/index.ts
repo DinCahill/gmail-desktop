@@ -21,6 +21,7 @@ import { getIsUpdateAvailable } from '../updater'
 import { openExternalUrl } from '../utils/url'
 import config, { ConfigKey } from '../config'
 import { initBlocker } from './blocker'
+import { initCorsFix } from './cors-fix'
 
 const accountViews = new Map<string, BrowserView>()
 
@@ -174,6 +175,8 @@ export function createAccountView(accountId: string, setAsTopView?: boolean) {
   )
 
   initBlocker(accountSession)
+
+  initCorsFix(accountSession)
 
   const accountView = new BrowserView({
     webPreferences: {
