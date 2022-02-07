@@ -89,6 +89,21 @@ export function initOrUpdateDockMenu() {
           sendToSelectedAccountView('gmail:go-to', 'all')
           mainWindow.show()
         }
+      },
+      {
+        type: 'separator'
+      },
+      {
+        label: 'Maximize',
+        click() {
+          mainWindow.maximize()
+        }
+      },
+      {
+        label: 'Unmaximize',
+        click() {
+          mainWindow.unmaximize()
+        }
       }
     ])
 
