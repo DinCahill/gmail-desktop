@@ -4865,10 +4865,10 @@ cyclist@^1.0.1:
   resolved "https://registry.yarnpkg.com/cyclist/-/cyclist-1.0.1.tgz#596e9698fd0c80e12038c2b82d6eb1b35b6224d9"
   integrity sha1-WW6WmP0MgOEgOMK4LW6xs1tiJNk=
 
-darkreader@^4.9.27:
-  version "4.9.27"
-  resolved "https://registry.yarnpkg.com/darkreader/-/darkreader-4.9.27.tgz#69b641d6a3c22b07fb0424406dfd9a3661b37197"
-  integrity sha512-DG8zsicuCbAYKaKvLUaiikeei5jN5dIpe0jyaPw4kDa2L5zVnWc/ZxNUYOFriKVAmicwqE5gH5EOfyI0MVt3KA==
+darkreader@^4.9.43:
+  version "4.9.44"
+  resolved "https://registry.yarnpkg.com/darkreader/-/darkreader-4.9.44.tgz#6aa89fd95c569dd9d77259cd34ebd2c7282e0e60"
+  integrity sha512-Mrt5s5eMaFC24Tfi2nNsXpYIfzWK/RUzJxgk0Ysqokvk9lBCn/pkUTyQGYeQbU/U3aKZEYXXqsxZjNfiLoA6QQ==
 
 debounce-fn@^4.0.0:
   version "4.0.0"

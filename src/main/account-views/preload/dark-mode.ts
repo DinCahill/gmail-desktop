@@ -52,7 +52,8 @@ function enableDarkMode(): void {
         '.aj2',
         // Hangouts Phone
         '.a8V'
-      ]
+      ],
+      disableStyleSheetsProxy: false
     }
   )
 }
