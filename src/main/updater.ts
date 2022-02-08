@@ -100,8 +100,11 @@ export function initUpdater(): void {
   }
 
   ipcMain.on('updater:download', () => {
-    downloadCancellationToken = new CancellationToken()
-    autoUpdater.downloadUpdate(downloadCancellationToken)
+    if (downloadCancellationToken === null) {
+      autoUpdater.downloadUpdate().then((downloadPromise) => {
+        downloadCancellationToken = downloadPromise.cancellationToken
+      })
+    }
   })
 
   ipcMain.on('updater:skip-version', (_event, version: string) => {
