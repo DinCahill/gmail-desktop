@@ -10,8 +10,7 @@ export const Available = () => (
     notes={[
       {
         version: '2.0.0',
-        note:
-          '<p>Discuss and give feedback about v3.0.0-alpha <a href="https://github.com/timche/gmail-desktop/discussions/242" data-hovercard-type="discussion" data-hovercard-url="/timche/gmail-desktop/discussions/242/hovercard">here</a>.</p><h2>New Features</h2><ul><li>Show url preview when hovering over external links</li></ul><h2>Changes</h2><ul><li>Move <code>Settings</code> to <code>Gmail Desktop</code> sub menu as <code>Preferences</code></li><li>Add <code>Gmail Preferences</code> menu item</li><li>Open <code>mailto</code> links in main window instead of new window</li></ul><h2>Fixes</h2><ul><li>Fix dark mode in child windows</li></ul>'
+        note: '<p>Discuss and give feedback about v3.0.0-alpha <a href="https://github.com/timche/gmail-desktop/discussions/242" data-hovercard-type="discussion" data-hovercard-url="/timche/gmail-desktop/discussions/242/hovercard">here</a>.</p><h2>New Features</h2><ul><li>Show url preview when hovering over external links</li></ul><h2>Changes</h2><ul><li>Move <code>Settings</code> to <code>Gmail Desktop</code> sub menu as <code>Preferences</code></li><li>Add <code>Gmail Preferences</code> menu item</li><li>Open <code>mailto</code> links in main window instead of new window</li></ul><h2>Fixes</h2><ul><li>Fix dark mode in child windows</li></ul>'
       },
       {
         version: '1.0.0',

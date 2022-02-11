@@ -148,9 +148,8 @@ const config = new Store<TypedStore>({
   accessPropertiesByDotNotation: false,
   migrations: {
     '>=2.21.2': (store) => {
-      const hideRightSidebar: boolean | undefined = store.get(
-        'hideRightSidebar'
-      )
+      const hideRightSidebar: boolean | undefined =
+        store.get('hideRightSidebar')
 
       if (typeof hideRightSidebar === 'boolean') {
         // @ts-expect-error
@@ -158,9 +157,8 @@ const config = new Store<TypedStore>({
       }
     },
     '>2.21.2': (store) => {
-      const overrideUserAgent: string | undefined = store.get(
-        'overrideUserAgent'
-      )
+      const overrideUserAgent: string | undefined =
+        store.get('overrideUserAgent')
 
       if (typeof overrideUserAgent === 'string') {
         if (overrideUserAgent.length > 0) {
