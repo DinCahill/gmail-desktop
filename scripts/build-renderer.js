@@ -1,4 +1,4 @@
-const build = require('./utils/build')
+const build = require('./utils/build.js')
 
 build('renderer', (isProd) => ({
   entryPoints: ['./src/renderer/index.tsx'],
