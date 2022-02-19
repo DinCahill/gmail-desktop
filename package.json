@@ -57,7 +57,7 @@
     "domhandler": "^4.3.0",
     "electron": "^15.3.7",
     "electron-builder": "^22.14.13",
-    "electron-context-menu": "^2.5.2",
+    "electron-context-menu": "^3.1.2",
     "electron-dl": "^3.3.0",
     "electron-log": "^4.4.6",
     "electron-notarize": "^1.1.1",
