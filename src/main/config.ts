@@ -1,6 +1,6 @@
 import { app, ipcMain } from 'electron'
 import { is } from 'electron-util'
-import Store = require('electron-store')
+import Store from 'electron-store'
 import { getPlatformUserAgentFix } from './user-agent'
 import { Account } from '../types'
 import { defaultAccountId } from '../constants'

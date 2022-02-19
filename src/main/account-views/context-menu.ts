@@ -1,5 +1,5 @@
 import { BrowserView } from 'electron'
-import electronContextMenu = require('electron-context-menu')
+import electronContextMenu from 'electron-context-menu'
 
 export function addContextMenu(accountView: BrowserView) {
   accountView.webContents.on('did-finish-load', () => {
