@@ -1,4 +1,4 @@
-const build = require('./utils/build')
+const build = require('./utils/build.js')
 
 async function buildMain() {
   await Promise.all([
