@@ -115,7 +115,6 @@
       "@typescript-eslint/naming-convention": "off",
       "@typescript-eslint/ban-ts-comment": "off",
       "@typescript-eslint/no-unsafe-call": "off",
-      "@typescript-eslint/no-unsafe-assignment": "off",
       "unicorn/prefer-module": "off",
       "import/no-cycle": "off",
       "import/extensions": "off"

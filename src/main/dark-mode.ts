@@ -1,4 +1,5 @@
 import { nativeTheme, ipcMain } from 'electron'
+import { darkModeInitConfig } from '../types'
 import config, { ConfigKey } from './config'
 import { getSelectedAccountView, sendToAccountViews } from './account-views'
 import { sendToMainWindow } from './main-window'
@@ -17,10 +18,11 @@ export async function initDarkMode() {
 
   ipcMain.handle('init-dark-mode', (event) => {
     const selectedAccountView = getSelectedAccountView()
-    return {
+    const response: darkModeInitConfig = {
       enabled: nativeTheme.shouldUseDarkColors,
       initLazy: event.sender.id !== selectedAccountView?.webContents.id
     }
+    return response
   })
 
   nativeTheme.on('updated', () => {

@@ -1,6 +1,7 @@
 import { ipcRenderer } from 'electron'
 import * as DarkReader from 'darkreader'
 import { darkTheme } from '../../../theme'
+import { darkModeInitConfig } from '../../../types'
 
 DarkReader.setFetchMethod(window.fetch)
 
@@ -61,7 +62,9 @@ function enableDarkMode(): void {
 }
 
 async function initDarkMode(): Promise<void> {
-  const darkMode = await ipcRenderer.invoke('init-dark-mode')
+  const darkMode = await (ipcRenderer.invoke(
+    'init-dark-mode'
+  ) as Promise<darkModeInitConfig>)
 
   if (darkMode.enabled) {
     if (darkMode.initLazy) {

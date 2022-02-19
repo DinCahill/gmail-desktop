@@ -23,3 +23,8 @@ export type AppUpdateInfo = {
   version: string
   releaseNotes: Array<{ version: string; note: string | undefined }>
 }
+
+export type darkModeInitConfig = {
+  enabled: boolean
+  initLazy: boolean
+}
