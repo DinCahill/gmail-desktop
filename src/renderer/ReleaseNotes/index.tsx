@@ -1,8 +1,8 @@
 import React from 'react'
 import { Box, Text, Container, Heading, Stack, Link } from '@chakra-ui/react'
-import HtmlParser from './HtmlParser'
 import { AppUpdateInfo } from '../../types'
 import { gitHubRepoUrl } from '../../constants'
+import HtmlParser from './HtmlParser'
 
 interface ReleaseNotesProps {
   notes: AppUpdateInfo['releaseNotes']

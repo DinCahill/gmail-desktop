@@ -3,6 +3,8 @@ import log from 'electron-log'
 import { autoUpdater } from 'electron-updater'
 import { CancellationToken, HttpError } from 'builder-util-runtime'
 import { is } from 'electron-util'
+import { AppUpdateInfo } from '../types'
+import { appName } from '../constants'
 import config, { ConfigKey } from './config'
 import { initOrUpdateAppMenu } from './menus/app'
 import { sendToMainWindow, showMainWindow } from './main-window'
@@ -12,11 +14,9 @@ import {
   updateAllAccountViewBounds
 } from './account-views'
 import { createNotification } from './utils/notifications'
-import { AppUpdateInfo } from '../types'
 import { setIsQuittingApp } from './app'
-import { appName } from '../constants'
 
-const autoUpdateCheckInterval = 60000 * 60 * 2 // Hours
+const autoUpdateCheckInterval = 60_000 * 60 * 2 // Hours
 let autoUpdateInterval: ReturnType<typeof setInterval>
 let isUpdateAvailable = false
 let downloadCancellationToken: CancellationToken

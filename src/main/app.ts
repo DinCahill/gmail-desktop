@@ -1,8 +1,8 @@
 import { app } from 'electron'
+import { appId } from '../constants'
 import config, { ConfigKey } from './config'
 import { getMainWindow, showMainWindow } from './main-window'
 import { sendToSelectedAccountView } from './account-views'
-import { appId } from '../constants'
 
 let isQuittingApp = false
 

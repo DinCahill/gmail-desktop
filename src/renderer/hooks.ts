@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 import { useColorMode } from '@chakra-ui/react'
+import { Except } from 'type-fest'
+import { Account, UnreadCounts, AppUpdateInfo, AppUpdateStatus } from '../types'
 import { isMacOS } from './helpers'
 import ipc from './ipc'
-import { Account, UnreadCounts, AppUpdateInfo, AppUpdateStatus } from '../types'
-import { Except } from 'type-fest'
 
 export function useDarkMode() {
   const { setColorMode } = useColorMode()
@@ -136,27 +136,27 @@ export function useAppUpdate() {
     updateStatus,
     updateInfo,
     updateDownloadPercent,
-    downloadUpdate: () => {
+    downloadUpdate() {
       ipc.send('updater:download')
       setUpdateStatus('downloading')
     },
-    installUpdate: () => {
+    installUpdate() {
       ipc.send('updater:install')
     },
-    dismissUpdate: () => {
+    dismissUpdate() {
       ipc.send('updater:dismiss')
       resetStates()
     },
-    cancelUpdateDownload: () => {
+    cancelUpdateDownload() {
       ipc.send('updater:cancel-download')
       resetStates()
     },
-    toggleReleaseNotes: (visible: boolean) => {
+    toggleReleaseNotes(visible: boolean) {
       ipc.send('updater:toggle-release-notes', visible)
       setIsReleaseNotesVisible(visible)
     },
     isReleaseNotesVisible,
-    skipUpdateVersion: (version: string) => {
+    skipUpdateVersion(version: string) {
       ipc.send('updater:skip-version', version)
       resetStates()
     }
@@ -186,19 +186,19 @@ export function useTitleBar() {
   return {
     isTitleBarEnabled,
     isWindowMaximized,
-    openAppMenu: () => {
+    openAppMenu() {
       ipc.send('title-bar:open-app-menu')
     },
-    minimzeWindow: () => {
+    minimzeWindow() {
       ipc.send('window:minimize')
     },
-    maximizeWindow: () => {
+    maximizeWindow() {
       ipc.send('window:maximize')
     },
-    unmaximizeWindow: () => {
+    unmaximizeWindow() {
       ipc.send('window:unmaximize')
     },
-    closeWindow: () => {
+    closeWindow() {
       ipc.send('window:close')
     }
   }

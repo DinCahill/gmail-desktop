@@ -1,10 +1,6 @@
-import * as path from 'path'
+import * as path from 'node:path'
 import { BrowserView, BrowserWindow, dialog, session } from 'electron'
-import {
-  addCustomCSS,
-  initCustomStyles,
-  setBurgerMenuOffset
-} from './custom-styles'
+import { is } from 'electron-util'
 import { enableAutoFixUserAgent } from '../user-agent'
 import { getMainWindow, sendToMainWindow } from '../main-window'
 import {
@@ -19,11 +15,15 @@ import {
   gitHubRepoUrl,
   googleAccountsUrl
 } from '../../constants'
-import { is } from 'electron-util'
-import { addContextMenu } from './context-menu'
 import { getIsUpdateAvailable } from '../updater'
 import { openExternalUrl } from '../utils/url'
 import config, { ConfigKey } from '../config'
+import { addContextMenu } from './context-menu'
+import {
+  addCustomCSS,
+  initCustomStyles,
+  setBurgerMenuOffset
+} from './custom-styles'
 import { initBlocker } from './blocker'
 
 const accountViews = new Map<string, BrowserView>()
@@ -60,7 +60,7 @@ export function sendToSelectedAccountView(channel: string, ...args: unknown[]) {
 }
 
 export function sendToAccountViews(channel: string, ...args: unknown[]) {
-  for (const [_accountId, accountView] of accountViews) {
+  for (const accountView of accountViews.values()) {
     accountView.webContents.send(channel, ...args)
   }
 }
@@ -77,7 +77,7 @@ export function selectAccountView(accountId: string) {
 export function forEachAccountView(
   callback: (accountView: BrowserView) => void
 ) {
-  for (const [_accountId, accountView] of accountViews) {
+  for (const accountView of accountViews.values()) {
     callback(accountView)
   }
 }
@@ -107,7 +107,7 @@ export function updateAccountViewBounds(accountView: BrowserView) {
 }
 
 export function updateAllAccountViewBounds() {
-  for (const [_accountId, accountView] of accountViews) {
+  for (const accountView of accountViews.values()) {
     updateAccountViewBounds(accountView)
   }
 }
@@ -130,7 +130,7 @@ export function removeAccountView(accountId: string) {
 export function hideAccountViews() {
   const mainWindow = getMainWindow()
 
-  for (const [_accountId, accountView] of accountViews) {
+  for (const accountView of accountViews.values()) {
     mainWindow.removeBrowserView(accountView)
   }
 }
@@ -138,7 +138,7 @@ export function hideAccountViews() {
 export function showAccountViews() {
   const mainWindow = getMainWindow()
 
-  for (const [_accountId, accountView] of accountViews) {
+  for (const accountView of accountViews.values()) {
     mainWindow.addBrowserView(accountView)
   }
 

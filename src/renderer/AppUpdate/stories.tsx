@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { action } from '@storybook/addon-actions'
-import AppUpdate, { AppUpdateProps } from '.'
 import { useDisclosure } from '@chakra-ui/react'
+import AppUpdate, { AppUpdateProps } from '.'
 
 export default {
   title: 'AppUpdate'

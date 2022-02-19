@@ -1,13 +1,13 @@
 import { app, BrowserView } from 'electron'
-import * as path from 'path'
-import * as fs from 'fs'
+import * as path from 'node:path'
+import * as fs from 'node:fs'
+import { is } from 'electron-util'
 import config, { ConfigKey } from '../../config'
 import { getMainWindow } from '../../main-window'
 import { getHasMultipleAccounts, sendToAccountViews } from '..'
+import { getIsUpdateAvailable } from '../../updater'
 import css from './style.css'
 import macosCSS from './style.macos.css'
-import { is } from 'electron-util'
-import { getIsUpdateAvailable } from '../../updater'
 
 export const userStylesPath = path.join(app.getPath('userData'), 'custom.css')
 

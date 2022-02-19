@@ -1,4 +1,4 @@
-import * as path from 'path'
+import * as path from 'node:path'
 import { app, nativeImage, NativeImage, Tray } from 'electron'
 import { is } from 'electron-util'
 import config, { ConfigKey } from './config'

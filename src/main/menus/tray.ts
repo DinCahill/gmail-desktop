@@ -1,8 +1,8 @@
+import { app, Menu, MenuItemConstructorOptions } from 'electron'
+import { is } from 'electron-util'
 import config, { ConfigKey } from '../config'
 import { shouldLaunchMinimized } from '../app'
 import { getAccountsMenuItems } from '../accounts'
-import { app, Menu, MenuItemConstructorOptions } from 'electron'
-import { is } from 'electron-util'
 import { getMainWindow, showMainWindow } from '../main-window'
 import { getTray } from '../tray'
 
@@ -46,7 +46,7 @@ export function getTrayMenuTemplate() {
       type: 'separator'
     },
     {
-      click: () => {
+      click() {
         showMainWindow()
       },
       label: 'Show',
@@ -56,7 +56,7 @@ export function getTrayMenuTemplate() {
     {
       label: 'Hide',
       visible: !shouldLaunchMinimized(),
-      click: () => {
+      click() {
         getMainWindow().hide()
       },
       id: 'hide-win'

@@ -1,7 +1,7 @@
 import React from 'react'
-import AccountsTab from '.'
 import { action } from '@storybook/addon-actions'
 import { nanoid } from 'nanoid'
+import AccountsTab from '.'
 
 export default {
   title: 'AccountsTab'

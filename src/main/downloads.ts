@@ -1,5 +1,5 @@
 import { shell } from 'electron'
-import * as path from 'path'
+import * as path from 'node:path'
 import electronDl from 'electron-dl'
 import config, { ConfigKey } from './config'
 import { createNotification } from './utils/notifications'

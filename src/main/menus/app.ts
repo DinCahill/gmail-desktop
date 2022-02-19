@@ -1,4 +1,4 @@
-import path from 'path'
+import path from 'node:path'
 import {
   app,
   shell,
@@ -9,8 +9,9 @@ import {
   session,
   nativeImage
 } from 'electron'
-import * as fs from 'fs'
+import * as fs from 'node:fs'
 import { is } from 'electron-util'
+import log from 'electron-log'
 import {
   checkForUpdatesWithFeedback,
   changeReleaseChannel,
@@ -22,7 +23,6 @@ import {
   setCustomStyle,
   userStylesPath
 } from '../account-views/custom-styles'
-import log from 'electron-log'
 import { showRestartDialog } from '../utils/dialog'
 import { enableAutoFixUserAgent, removeCustomUserAgent } from '../user-agent'
 import {

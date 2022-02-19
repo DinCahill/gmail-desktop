@@ -1,12 +1,12 @@
 import { app, ipcMain, Notification } from 'electron'
+import { is } from 'electron-util'
+import { isEnabled as isDoNotDisturbEnabled } from '@sindresorhus/do-not-disturb'
+import { Mail, UnreadCounts } from '../types'
 import { getAccountIdByViewId } from './account-views'
 import { getAccount, selectAccount } from './accounts'
 import { sendToMainWindow, showMainWindow } from './main-window'
 import config, { ConfigKey } from './config'
-import { is } from 'electron-util'
 import { updateTrayUnreadStatus } from './tray'
-import { Mail, UnreadCounts } from '../types'
-import { isEnabled as isDoNotDisturbEnabled } from '@sindresorhus/do-not-disturb'
 
 const unreadCounts: UnreadCounts = {}
 

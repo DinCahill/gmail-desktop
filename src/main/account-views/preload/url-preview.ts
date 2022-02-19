@@ -1,7 +1,7 @@
 import { darkTheme } from '../../../theme'
 import { gmailUrl } from '../../../constants'
 
-let urlPreviewElement: HTMLDivElement | null = null
+let urlPreviewElement: HTMLDivElement | undefined
 
 export function initUrlPreview() {
   window.addEventListener('mouseover', (event) => {
@@ -20,7 +20,7 @@ export function initUrlPreview() {
   window.addEventListener('mouseout', () => {
     if (urlPreviewElement) {
       urlPreviewElement.remove()
-      urlPreviewElement = null
+      urlPreviewElement = undefined
     }
   })
 }

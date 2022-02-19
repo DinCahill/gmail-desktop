@@ -1,8 +1,8 @@
 import { app } from 'electron'
-import config, { ConfigKey } from '../config'
-import userAgents from './user-agents.json'
-import { showRestartDialog } from '../utils/dialog'
 import { platform } from 'electron-util'
+import config, { ConfigKey } from '../config'
+import { showRestartDialog } from '../utils/dialog'
+import userAgents from './user-agents.json'
 
 export function removeCustomUserAgent(): void {
   config.set(ConfigKey.CustomUserAgent, '')

@@ -177,7 +177,7 @@ function parseNewMails(feedDocument: Document) {
 
     const issuedDate = getDateBySelector(mail, 'issued')
 
-    if (currentDate - issuedDate < 60000) {
+    if (currentDate - issuedDate < 60_000) {
       previousNewMails.add(messageId)
 
       const newMail = {
@@ -264,7 +264,7 @@ export function initGmail() {
         'textarea[name="to"]',
         {
           stopOnDomReady: false,
-          timeout: 60000
+          timeout: 60_000
         }
       )
 

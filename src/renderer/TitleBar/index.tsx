@@ -6,14 +6,14 @@ import {
   Spacer,
   useColorModeValue
 } from '@chakra-ui/react'
-import { appRegionDragStyle, appRegionNoDragStyle } from '../helpers'
 import { Except } from 'type-fest'
+import { appRegionDragStyle, appRegionNoDragStyle } from '../helpers'
+import { appName } from '../../constants'
 import CloseIcon from './icons/Close'
 import EllipsisIcon from './icons/Ellipsis'
 import MaximizeIcon from './icons/Maximize'
 import MinimizeIcon from './icons/Minimize'
 import RestoreIcon from './icons/Restore'
-import { appName } from '../../constants'
 
 const titleBarHeight = 30
 

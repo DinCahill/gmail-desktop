@@ -1,7 +1,7 @@
 import { ipcRenderer as ipc } from 'electron'
+import elementReady from 'element-ready'
 import { ConfigKey } from '../../config'
 import initDarkMode from './dark-mode'
-import elementReady from 'element-ready'
 import { initGmail } from './gmail'
 import { initUrlPreview } from './url-preview'
 
@@ -25,7 +25,7 @@ function attachButtonListeners(): void {
     const buttonReady = elementReady(`body.xE .G-atb .${selector}`)
     const readyTimeout = setTimeout(() => {
       buttonReady.stop()
-    }, 10000)
+    }, 10_000)
 
     buttonReady.then((button) => {
       clearTimeout(readyTimeout)

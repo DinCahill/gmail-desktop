@@ -10,8 +10,8 @@ import {
   FormControl,
   FormLabel
 } from '@chakra-ui/react'
-import { Account } from '../../types'
 import { Except } from 'type-fest'
+import { Account } from '../../types'
 import { defaultAccountId } from '../../constants'
 
 interface EditAccountProps {

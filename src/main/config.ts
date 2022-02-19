@@ -1,9 +1,9 @@
 import { app, ipcMain } from 'electron'
 import { is } from 'electron-util'
 import Store from 'electron-store'
-import { getPlatformUserAgentFix } from './user-agent'
 import { Account } from '../types'
 import { defaultAccountId } from '../constants'
+import { getPlatformUserAgentFix } from './user-agent'
 
 interface LastWindowState {
   bounds: {
@@ -147,7 +147,7 @@ const config = new Store<TypedStore>({
   name: is.development ? 'config.dev' : 'config',
   accessPropertiesByDotNotation: false,
   migrations: {
-    '>=2.21.2': (store) => {
+    '>=2.21.2'(store) {
       const hideRightSidebar: boolean | undefined =
         store.get('hideRightSidebar')
 
@@ -156,7 +156,7 @@ const config = new Store<TypedStore>({
         store.delete('hideRightSidebar')
       }
     },
-    '>2.21.2': (store) => {
+    '>2.21.2'(store) {
       const overrideUserAgent: string | undefined =
         store.get('overrideUserAgent')
 
@@ -169,14 +169,14 @@ const config = new Store<TypedStore>({
         store.delete('overrideUserAgent')
       }
     },
-    '>3.0.0-alpha.2': (store) => {
+    '>3.0.0-alpha.2'(store) {
       const customUserAgent: string = store.get('customUserAgent')
 
       if (customUserAgent === getPlatformUserAgentFix()) {
         store.set('customUserAgent', '')
       }
     },
-    '>3.0.0-alpha.15': (store) => {
+    '>3.0.0-alpha.15'(store) {
       const notificationsSilent = store.get('notificationsSilent')
 
       if (typeof notificationsSilent === 'boolean') {
@@ -185,7 +185,7 @@ const config = new Store<TypedStore>({
         store.delete('notificationsSilent')
       }
     },
-    '>3.0.0-alpha.20': (store) => {
+    '>3.0.0-alpha.20'(store) {
       const notificationsDisabled = store.get('notificationsDisabled')
 
       if (typeof notificationsDisabled === 'boolean') {

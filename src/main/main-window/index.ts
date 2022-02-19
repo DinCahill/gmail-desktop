@@ -1,6 +1,7 @@
-import * as path from 'path'
+import * as path from 'node:path'
 import { app, BrowserWindow, nativeTheme, ipcMain } from 'electron'
 import { is } from 'electron-util'
+import debounce from 'lodash.debounce'
 import config, { ConfigKey } from '../config'
 import { toggleAppVisiblityTrayItem } from '../tray'
 import {
@@ -10,10 +11,9 @@ import {
 import { getIsQuittingApp, shouldLaunchMinimized } from '../app'
 import { openExternalUrl } from '../utils/url'
 import { getAppMenu } from '../menus/app'
-import debounce from 'lodash.debounce'
-import indexHTML from './index.html'
 import { darkTheme } from '../../theme'
 import { mainWindowMinWidth } from '../../constants'
+import indexHTML from './index.html'
 
 let mainWindow: BrowserWindow | undefined
 

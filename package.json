@@ -85,7 +85,7 @@
     "type-fest": "^2.12.0",
     "typescript": "^4.5.5",
     "write-json-file": "^5.0.0",
-    "xo": "^0.38.2"
+    "xo": "^0.48.0"
   },
   "lint-staged": {
     "*.{ts,tsx,js}": [
@@ -111,7 +111,14 @@
     ],
     "prettier": true,
     "rules": {
-      "@typescript-eslint/no-floating-promises": "off"
+      "@typescript-eslint/no-floating-promises": "off",
+      "@typescript-eslint/naming-convention": "off",
+      "@typescript-eslint/ban-ts-comment": "off",
+      "@typescript-eslint/no-unsafe-call": "off",
+      "@typescript-eslint/no-unsafe-assignment": "off",
+      "unicorn/prefer-module": "off",
+      "import/no-cycle": "off",
+      "import/extensions": "off"
     },
     "overrides": [
       {

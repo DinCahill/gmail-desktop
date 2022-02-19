@@ -22,7 +22,7 @@ function parseDom(nodes: DOMNode[]) {
 }
 
 const htmlReactParserOptions: HTMLReactParserOptions = {
-  replace: (domNode) => {
+  replace(domNode) {
     if (domNode instanceof ElementNode) {
       const { name, attribs, children } = domNode
 

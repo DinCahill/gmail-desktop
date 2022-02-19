@@ -21,5 +21,5 @@ export type AppUpdateStatus = 'available' | 'downloading' | 'install'
 
 export type AppUpdateInfo = {
   version: string
-  releaseNotes: Array<{ version: string; note: string | null }>
+  releaseNotes: Array<{ version: string; note: string | undefined }>
 }

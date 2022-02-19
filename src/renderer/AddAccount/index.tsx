@@ -8,9 +8,9 @@ import {
   FormControl,
   FormLabel
 } from '@chakra-ui/react'
-import { Account } from '../../types'
 import { nanoid } from 'nanoid'
 import { Except } from 'type-fest'
+import { Account } from '../../types'
 
 interface AddAccountProps {
   onAdd: (account: Except<Account, 'selected'>) => void

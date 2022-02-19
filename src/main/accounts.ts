@@ -1,4 +1,7 @@
 import { ipcMain } from 'electron'
+import { is } from 'electron-util'
+import { Account } from '../types'
+import { defaultAccountId } from '../constants'
 import {
   createAccountView,
   removeAccountView,
@@ -11,9 +14,6 @@ import config, { ConfigKey } from './config'
 import { sendToMainWindow, showMainWindow } from './main-window'
 import { initOrUpdateDockMenu } from './menus/dock'
 import { initOrUpdateTrayMenu } from './menus/tray'
-import { Account } from '../types'
-import { defaultAccountId } from '../constants'
-import { is } from 'electron-util'
 
 export function getAccount(accountId: string) {
   return getAccounts().find(({ id }) => id === accountId)
