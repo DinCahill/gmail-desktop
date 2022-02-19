@@ -63,7 +63,7 @@
     "electron-notarize": "^1.1.1",
     "electron-store": "^7.0.3",
     "electron-updater": "^4.6.5",
-    "electron-util": "^0.14.2",
+    "electron-util": "^0.17.2",
     "element-ready": "^5.0.0",
     "esbuild": "^0.14.23",
     "framer-motion": "^4.1.17",
