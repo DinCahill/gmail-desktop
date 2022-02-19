@@ -69,7 +69,7 @@
     "framer-motion": "^3.10.6",
     "html-react-parser": "1.2.4",
     "husky": "^6.0.0",
-    "lint-staged": "^10.5.4",
+    "lint-staged": "^12.3.4",
     "lodash.debounce": "^4.0.8",
     "nanoid": "^3.3.1",
     "nodemon": "^2.0.15",
