@@ -274,9 +274,8 @@ export function getAppMenu() {
               checked: app.isDefaultProtocolClient('mailto'),
               click({ checked }) {
                 if (checked) {
-                  const isSetMailClient = app.setAsDefaultProtocolClient(
-                    'mailto'
-                  )
+                  const isSetMailClient =
+                    app.setAsDefaultProtocolClient('mailto')
 
                   dialog.showMessageBox({
                     type: 'info',
@@ -285,9 +284,8 @@ export function getAppMenu() {
                       : `There was a problem with setting ${app.name} as default mail client.`
                   })
                 } else {
-                  const isUnsetMailClient = app.removeAsDefaultProtocolClient(
-                    'mailto'
-                  )
+                  const isUnsetMailClient =
+                    app.removeAsDefaultProtocolClient('mailto')
 
                   dialog.showMessageBox({
                     type: 'info',
