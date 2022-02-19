@@ -1,4 +1,4 @@
-const build = require('./utils/build.js')
+import build from './utils/build.js'
 
 async function buildMain() {
   await Promise.all([
@@ -13,19 +13,19 @@ async function buildMain() {
         '.html': 'file'
       },
       assetNames: '[name]',
-      outfile: 'build-js/main/index.js'
+      outfile: 'build-js/main/index.cjs'
     }),
     build('main-preload-main-window', {
       entryPoints: ['src/main/main-window/preload.ts'],
       target: 'chrome94',
       external: ['electron'],
-      outfile: 'build-js/main/preload/main-window.js'
+      outfile: 'build-js/main/preload/main-window.cjs'
     }),
     build('main-preload-account-views', {
       entryPoints: ['src/main/account-views/preload/index.ts'],
       target: 'chrome94',
       external: ['electron'],
-      outfile: 'build-js/main/preload/account-view.js'
+      outfile: 'build-js/main/preload/account-view.cjs'
     })
   ])
 }

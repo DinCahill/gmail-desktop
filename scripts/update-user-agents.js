@@ -1,6 +1,6 @@
-const path = require('path')
-const got = require('got')
-const writeJsonFile = require('write-json-file')
+import { fileURLToPath } from 'node:url'
+import got from 'got'
+import { writeJsonFile } from 'write-json-file'
 
 async function main() {
   let latestFirefoxUserAgents
@@ -25,7 +25,9 @@ async function main() {
   }
 
   await writeJsonFile(
-    path.resolve(__dirname, '..', 'src/main', 'user-agent', 'user-agents.json'),
+    fileURLToPath(
+      new URL('../src/main/user-agent/user-agents.json', import.meta.url)
+    ),
     {
       windows: match[0],
       macos: match[1],

@@ -7,7 +7,8 @@
   "repository": "timche/gmail-desktop",
   "author": "Tim Cheung <tim@cheung.io>",
   "license": "MIT",
-  "main": "build-js/main/index.js",
+  "type": "module",
+  "main": "build-js/main/index.cjs",
   "scripts": {
     "prepare": "husky install",
     "postinstall": "electron-builder install-app-deps",
@@ -161,7 +162,7 @@
       "static/"
     ],
     "appId": "io.cheung.gmail-desktop",
-    "afterSign": "scripts/build-hook-after-sign.js",
+    "afterSign": "scripts/build-hook-after-sign.cjs",
     "mac": {
       "category": "public.app-category.productivity",
       "darkModeSupport": true

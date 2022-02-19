@@ -1,4 +1,5 @@
-const esbuild = require('esbuild')
+import process from 'node:process'
+import esbuild from 'esbuild'
 
 const isProd = process.env.NODE_ENV === 'production'
 const watch = process.env.WATCH === 'true'
@@ -20,7 +21,7 @@ function build(name, buildOptions) {
       bundle: true,
       watch: watch
         ? {
-            onRebuild: (error) => {
+            onRebuild(error) {
               if (error) {
                 logBuildFailure(error)
                 return
@@ -43,4 +44,4 @@ function build(name, buildOptions) {
     })
 }
 
-module.exports = build
+export default build

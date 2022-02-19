@@ -181,7 +181,7 @@ export function createAccountView(accountId: string, setAsTopView?: boolean) {
   const accountView = new BrowserView({
     webPreferences: {
       partition: sessionPartitionKey,
-      preload: path.join(__dirname, 'preload', 'account-view.js'),
+      preload: path.join(__dirname, 'preload', 'account-view.cjs'),
       nativeWindowOpen: true
     }
   })

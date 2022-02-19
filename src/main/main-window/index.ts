@@ -61,7 +61,7 @@ export function createMainWindow(): void {
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true,
-      preload: path.join(__dirname, 'preload', 'main-window.js')
+      preload: path.join(__dirname, 'preload', 'main-window.cjs')
     },
     show: !shouldLaunchMinimized(),
     icon: is.linux
