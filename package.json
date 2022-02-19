@@ -64,7 +64,7 @@
     "electron-store": "^8.0.1",
     "electron-updater": "^4.6.5",
     "electron-util": "^0.17.2",
-    "element-ready": "^5.0.0",
+    "element-ready": "^6.2.0",
     "esbuild": "^0.14.23",
     "framer-motion": "^4.1.17",
     "html-react-parser": "1.2.4",
