@@ -54,7 +54,7 @@
     "cross-env": "^7.0.3",
     "darkreader": "^4.9.44",
     "del-cli": "^3.0.1",
-    "domhandler": "^4.0.0",
+    "domhandler": "^4.3.0",
     "electron": "^15.3.7",
     "electron-builder": "^22.14.13",
     "electron-context-menu": "^2.5.2",
