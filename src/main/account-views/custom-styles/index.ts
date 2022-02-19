@@ -1,4 +1,4 @@
-import { app, BrowserView } from 'electron'
+import { app, BrowserView, BrowserWindow } from 'electron'
 import * as path from 'node:path'
 import * as fs from 'node:fs'
 import { is } from 'electron-util'
@@ -11,7 +11,7 @@ import macosCSS from './style.macos.css'
 
 export const userStylesPath = path.join(app.getPath('userData'), 'custom.css')
 
-export function addCustomCSS(view: BrowserView): void {
+export function addCustomCSS(view: BrowserView | BrowserWindow): void {
   view.webContents.insertCSS(css)
 
   if (is.macos) {

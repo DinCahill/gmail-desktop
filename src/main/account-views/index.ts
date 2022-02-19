@@ -242,7 +242,7 @@ export function createAccountView(accountId: string, setAsTopView?: boolean) {
   accountView.webContents.on(
     'new-window',
     // eslint-disable-next-line max-params
-    (event: any, url, _1, _2, options) => {
+    (event, url, _1, _2, options) => {
       event.preventDefault()
 
       // `Add account` opens `accounts.google.com`
@@ -264,7 +264,9 @@ export function createAccountView(accountId: string, setAsTopView?: boolean) {
         })
 
         event.newGuest.webContents.on('dom-ready', () => {
-          addCustomCSS(event.newGuest)
+          if (event.newGuest !== undefined) {
+            addCustomCSS(event.newGuest)
+          }
         })
 
         event.newGuest.webContents.on(
