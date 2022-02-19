@@ -28,9 +28,7 @@ const IconButton = ({
 
   return (
     <ChakraIconButton
-      onClick={() => {
-        onClick()
-      }}
+      onClick={onClick}
       height={titleBarHeight}
       color="gray"
       aria-label=""
