@@ -123,6 +123,9 @@ export function getAppMenu() {
         },
         {
           label: 'Check for Updates...',
+          visible:
+            is.development ||
+            fs.existsSync(path.join(app.getAppPath(), '..', 'app-update.yml')),
           click() {
             checkForUpdatesWithFeedback()
           }

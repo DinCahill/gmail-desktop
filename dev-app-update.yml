@@ -1,0 +1,4 @@
+provider: github
+owner: timche
+repo: gmail-desktop
+channel: dev
